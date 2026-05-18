@@ -1,0 +1,219 @@
+================================================================================
+                    DAILY STARTUP GUIDE
+         Soil Analysis and Crop Recommendation System
+================================================================================
+
+🎯 USE THIS GUIDE EVERY TIME YOU WANT TO RUN THE APPLICATION
+
+================================================================================
+METHOD 1: USING BATCH FILES (EASIEST - RECOMMENDED)
+================================================================================
+
+Step 1: Start XAMPP
+-------------------
+1. Open XAMPP Control Panel
+2. Click "Start" for Apache
+3. Click "Start" for MySQL
+4. Wait until both show green "Running"
+
+Step 2: Start Backend
+--------------------
+1. Go to your project folder:
+   C:\Users\HP\OneDrive\Desktop\Soil_Analysis\
+2. Double-click: START_BACKEND.bat
+3. A black window opens and shows "Server is running on port 3000"
+4. KEEP THIS WINDOW OPEN (minimize if needed)
+
+Step 3: Start Frontend
+---------------------
+1. In the same project folder
+2. Double-click: START_FRONTEND.bat
+3. Another black window opens
+4. KEEP THIS WINDOW OPEN TOO
+
+Step 4: Open Application
+------------------------
+1. Double-click: OPEN_APPLICATION.bat
+   OR
+2. Open browser manually and go to:
+   http://localhost:8080/index.html
+
+DONE! Application is running! ✅
+
+Total Time: ~1 minute
+
+================================================================================
+METHOD 2: MANUAL START (IF BATCH FILES DON'T WORK)
+================================================================================
+
+Step 1: Start XAMPP
+-------------------
+1. Open XAMPP Control Panel
+2. Start Apache
+3. Start MySQL
+
+Step 2: Start Backend
+--------------------
+1. Press Windows Key + R
+2. Type: powershell
+3. Press Enter
+4. Type: cd "C:\Users\HP\OneDrive\Desktop\Soil_Analysis\backend"
+5. Press Enter
+6. Type: npm start
+7. Press Enter
+8. Keep window open
+
+Step 3: Start Frontend
+---------------------
+1. Press Windows Key + R (again)
+2. Type: powershell
+3. Press Enter
+4. Type: cd "C:\Users\HP\OneDrive\Desktop\Soil_Analysis\frontend"
+5. Press Enter
+6. Type: npx http-server -p 8080
+7. Press Enter
+8. Keep window open
+
+Step 4: Open Browser
+-------------------
+1. Open Chrome/Firefox/Edge
+2. Go to: http://localhost:8080/index.html
+
+================================================================================
+WHAT YOU NEED RUNNING
+================================================================================
+
+✅ XAMPP Control Panel:
+   - Apache: Running (green)
+   - MySQL: Running (green)
+
+✅ PowerShell Window 1 (Backend):
+   - Shows: "Server is running on port 3000"
+   - Keep open
+
+✅ PowerShell Window 2 (Frontend):
+   - Shows: "http-server server running @ localhost:8080"
+   - Keep open
+
+✅ Browser:
+   - http://localhost:8080/index.html
+   - Shows home page
+
+================================================================================
+WHEN YOU'RE DONE FOR THE DAY
+================================================================================
+
+Step 1: Close Browser
+--------------------
+- Just close the browser tab/window
+
+Step 2: Stop Servers
+-------------------
+- Go to Backend PowerShell window
+- Press: Ctrl + C
+- Type: Y
+- Press Enter
+- Close window
+
+- Go to Frontend PowerShell window
+- Press: Ctrl + C
+- Type: Y
+- Press Enter
+- Close window
+
+Step 3: Stop XAMPP (Optional)
+-----------------------------
+- Open XAMPP Control Panel
+- Click "Stop" for MySQL
+- Click "Stop" for Apache
+- Close XAMPP Control Panel
+
+Step 4: Shut Down Laptop
+------------------------
+- Now you can safely shut down your laptop
+- All your data is saved in the database!
+
+================================================================================
+IMPORTANT NOTES
+================================================================================
+
+✅ YOUR DATA IS SAFE:
+   - All registered users are saved
+   - All soil tests are saved
+   - All recommendations are saved
+   - Database persists even after shutdown
+
+✅ YOU DON'T NEED TO REDO:
+   - npm install (already done)
+   - Database creation (already done)
+   - SQL imports (already done)
+   - Any configuration (already done)
+
+✅ YOU ONLY NEED TO:
+   - Start XAMPP services
+   - Start backend server
+   - Start frontend server
+   - Open browser
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Problem: Backend won't start
+Solution: Make sure XAMPP MySQL is running first
+
+Problem: Frontend shows directory listing
+Solution: Use http://localhost:8080/index.html (with /index.html)
+
+Problem: "Port already in use"
+Solution: Close all PowerShell windows and start fresh
+
+Problem: Can't connect to database
+Solution: Check XAMPP MySQL is running (green)
+
+Problem: Login doesn't work
+Solution: Check backend is running (port 3000)
+
+================================================================================
+QUICK CHECKLIST
+================================================================================
+
+Before using the application, verify:
+
+□ XAMPP Apache: Running
+□ XAMPP MySQL: Running
+□ Backend PowerShell: Open and running
+□ Frontend PowerShell: Open and running
+□ Browser: http://localhost:8080/index.html
+
+If all checked, application should work! ✅
+
+================================================================================
+ESTIMATED TIME
+================================================================================
+
+First time setup (today): 30-45 minutes ✅ DONE!
+Daily startup (tomorrow onwards): 1-2 minutes ⚡
+
+================================================================================
+BATCH FILES LOCATION
+================================================================================
+
+All batch files are in your project folder:
+C:\Users\HP\OneDrive\Desktop\Soil_Analysis\
+
+Files:
+- START_BACKEND.bat      (Start backend server)
+- START_FRONTEND.bat     (Start frontend server)
+- OPEN_APPLICATION.bat   (Open in browser)
+
+Just double-click them in order!
+
+================================================================================
+
+🎉 YOUR APPLICATION IS READY TO USE ANYTIME!
+
+Just follow this guide every time you want to use it.
+It takes less than 2 minutes to start everything!
+
+================================================================================

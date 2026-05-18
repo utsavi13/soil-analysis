@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Reports - Soil Analysis System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🌾 Soil Analysis System</h1>
+            </div>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="soil-test.html">New Test</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </header>
+
+        <main class="reports-content">
+            <h2>Previous Soil Test Reports</h2>
+            <p class="subtitle">View your historical soil analysis data</p>
+
+            <div id="reportsList" class="reports-list">
+                <div class="loading">Loading reports...</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/reports.js"></script>
+</body>
+</html>

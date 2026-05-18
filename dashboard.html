@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Soil Analysis System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🌾 Soil Analysis System</h1>
+            </div>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="welcome-section">
+                <h2>Welcome, <span id="farmerName">Farmer</span>!</h2>
+                <p>Manage your soil tests and view recommendations</p>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="dashboard-card" onclick="location.href='soil-test.html'">
+                    <span class="card-icon">🔬</span>
+                    <h3>Enter Soil Test</h3>
+                    <p>Submit new soil analysis data</p>
+                    <button class="btn btn-primary">Start Test</button>
+                </div>
+
+                <div class="dashboard-card" onclick="location.href='reports.html'">
+                    <span class="card-icon">📊</span>
+                    <h3>Previous Reports</h3>
+                    <p>View your test history</p>
+                    <button class="btn btn-secondary">View Reports</button>
+                </div>
+
+                <div class="dashboard-card" onclick="location.href='knowledge-base.html'">
+                    <span class="card-icon">📚</span>
+                    <h3>Knowledge Base</h3>
+                    <p>Learn about soil health</p>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Quick Guide</h3>
+                <div class="guide-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Get your soil tested at a lab or use a soil testing kit</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Enter pH, Nitrogen, Phosphorus, and Potassium values</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <p>Receive personalized crop and fertilizer recommendations</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <p>Implement suggestions and track your progress</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

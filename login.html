@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Soil Analysis System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🌾 Soil Analysis System</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="register.html">Register</a>
+            </nav>
+        </header>
+
+        <main class="form-container">
+            <div class="form-card">
+                <h2>Farmer Login</h2>
+                <p class="form-subtitle">Access your dashboard</p>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div id="message" class="message"></div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+
+                <p class="form-footer">
+                    Don't have an account? <a href="register.html">Register here</a>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

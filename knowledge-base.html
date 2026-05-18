@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base - Soil Analysis System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .kb-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        .kb-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .kb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .kb-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .kb-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .kb-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .kb-table th, .kb-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .kb-table th {
+            background: #667eea;
+            color: white;
+        }
+        .tip-box {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🌾 Soil Analysis System</h1>
+            </div>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="soil-test.html">New Test</a>
+                <a href="reports.html">Reports</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </header>
+
+        <main style="padding: 20px;">
+            <h2>📚 Knowledge Base</h2>
+            <p style="color: #666; margin-bottom: 30px;">Learn about soil health, crop requirements, and fertilizer management</p>
+
+            <!-- Understanding Soil Parameters -->
+            <div class="kb-section">
+                <h3>🧪 Understanding Soil Parameters</h3>
+                
+                <div class="kb-grid">
+                    <div class="kb-card">
+                        <h4>pH Level</h4>
+                        <p><strong>What it is:</strong> Measure of soil acidity or alkalinity (0-14 scale)</p>
+                        <p><strong>Ideal Range:</strong> 5.5 - 7.5 for most crops</p>
+                        <p><strong>Why it matters:</strong> Affects nutrient availability and microbial activity</p>
+                        <div class="tip-box">
+                            <strong>💡 Tip:</strong> pH below 5.5 is acidic, above 7.5 is alkaline. Most crops prefer slightly acidic to neutral soil.
+                        </div>
+                    </div>
+
+                    <div class="kb-card">
+                        <h4>Nitrogen (N)</h4>
+                        <p><strong>What it is:</strong> Essential for leaf and stem growth</p>
+                        <p><strong>Typical Range:</strong> 20-200 kg/hectare</p>
+                        <p><strong>Signs of Deficiency:</strong> Yellowing leaves, stunted growth</p>
+                        <div class="tip-box">
+                            <strong>💡 Tip:</strong> Nitrogen is mobile in soil and needs regular replenishment.
+                        </div>
+                    </div>
+
+                    <div class="kb-card">
+                        <h4>Phosphorus (P)</h4>
+                        <p><strong>What it is:</strong> Vital for root development and flowering</p>
+                        <p><strong>Typical Range:</strong> 10-100 kg/hectare</p>
+                        <p><strong>Signs of Deficiency:</strong> Purple leaves, poor root growth</p>
+                        <div class="tip-box">
+                            <strong>💡 Tip:</strong> Phosphorus is less mobile and stays in soil longer.
+                        </div>
+                    </div>
+
+                    <div class="kb-card">
+                        <h4>Potassium (K)</h4>
+                        <p><strong>What it is:</strong> Important for disease resistance and water regulation</p>
+                        <p><strong>Typical Range:</strong> 20-150 kg/hectare</p>
+                        <p><strong>Signs of Deficiency:</strong> Brown leaf edges, weak stems</p>
+                        <div class="tip-box">
+                            <strong>💡 Tip:</strong> Potassium helps plants withstand stress and disease.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Crops -->
+            <div class="kb-section">
+                <h3>🌱 Popular Crops & Their Requirements</h3>
+                
+                <table class="kb-table">
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>pH Range</th>
+                            <th>N (kg/ha)</th>
+                            <th>P (kg/ha)</th>
+                            <th>K (kg/ha)</th>
+                            <th>Best Season</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Rice</strong></td>
+                            <td>5.5 - 7.0</td>
+                            <td>120</td>
+                            <td>60</td>
+                            <td>60</td>
+                            <td>Monsoon</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wheat</strong></td>
+                            <td>6.0 - 7.5</td>
+                            <td>100</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>Winter</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maize</strong></td>
+                            <td>5.8 - 7.0</td>
+                            <td>150</td>
+                            <td>60</td>
+                            <td>40</td>
+                            <td>Summer</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cotton</strong></td>
+                            <td>6.0 - 7.5</td>
+                            <td>120</td>
+                            <td>60</td>
+                            <td>60</td>
+                            <td>Summer</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sugarcane</strong></td>
+                            <td>6.0 - 7.5</td>
+                            <td>200</td>
+                            <td>80</td>
+                            <td>100</td>
+                            <td>Year-round</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Common Fertilizers -->
+            <div class="kb-section">
+                <h3>💊 Common Fertilizers Guide</h3>
+                
+                <table class="kb-table">
+                    <thead>
+                        <tr>
+                            <th>Fertilizer</th>
+                            <th>N (%)</th>
+                            <th>P (%)</th>
+                            <th>K (%)</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Urea</strong></td>
+                            <td>46</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Nitrogen deficiency, leaf growth</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DAP</strong></td>
+                            <td>18</td>
+                            <td>46</td>
+                            <td>0</td>
+                            <td>Phosphorus deficiency, root development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MOP</strong></td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>60</td>
+                            <td>Potassium deficiency, disease resistance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NPK 20-20-20</strong></td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>Balanced nutrition, maintenance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NPK 10-26-26</strong></td>
+                            <td>10</td>
+                            <td>26</td>
+                            <td>26</td>
+                            <td>Flowering and fruiting stages</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="kb-section">
+                <h3>✅ Best Practices for Soil Health</h3>
+                
+                <div class="kb-grid">
+                    <div class="kb-card">
+                        <h4>1. Regular Testing</h4>
+                        <p>Test your soil at least once per growing season</p>
+                        <ul>
+                            <li>Before planting</li>
+                            <li>Mid-season for adjustments</li>
+                            <li>After harvest for planning</li>
+                        </ul>
+                    </div>
+
+                    <div class="kb-card">
+                        <h4>2. Crop Rotation</h4>
+                        <p>Rotate crops to maintain soil health</p>
+                        <ul>
+                            <li>Prevents nutrient depletion</li>
+                            <li>Reduces pest buildup</li>
+                            <li>Improves soil structure</li>
+                        </ul>
+                    </div>
+
+                    <div class="kb-card">
+                        <h4>3. Organic Matter</h4>
+                        <p>Add compost and organic materials</p>
+                        <ul>
+                            <li>Improves water retention</li>
+                            <li>Enhances nutrient availability</li>
+                            <li>Promotes beneficial microbes</li>
+                        </ul>
+                    </div>
+
+                    <div class="kb-card">
+                        <h4>4. Balanced Fertilization</h4>
+                        <p>Apply fertilizers based on soil test results</p>
+                        <ul>
+                            <li>Avoid over-application</li>
+                            <li>Use right fertilizer at right time</li>
+                            <li>Consider slow-release options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interpretation Guide -->
+            <div class="kb-section">
+                <h3>📊 How to Interpret Your Results</h3>
+                
+                <div class="kb-card">
+                    <h4>Understanding Suitability Scores</h4>
+                    <p>Our system calculates a suitability score for each crop based on your soil conditions:</p>
+                    <ul>
+                        <li><strong>Score 90-100:</strong> Excellent match - Highly recommended</li>
+                        <li><strong>Score 70-89:</strong> Good match - Suitable with minor adjustments</li>
+                        <li><strong>Score 50-69:</strong> Fair match - Requires fertilizer corrections</li>
+                        <li><strong>Score below 50:</strong> Poor match - Consider other crops</li>
+                    </ul>
+                </div>
+
+                <div class="kb-card" style="margin-top: 20px;">
+                    <h4>Nutrient Deviation Explained</h4>
+                    <p>Deviations show the difference between your soil and ideal requirements:</p>
+                    <ul>
+                        <li><strong>Negative (-20):</strong> Your soil has 20 kg/ha LESS than ideal - Need to add</li>
+                        <li><strong>Positive (+15):</strong> Your soil has 15 kg/ha MORE than ideal - Excess</li>
+                        <li><strong>Near Zero (±5):</strong> Your soil is close to ideal - Good condition</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="kb-section">
+                <h3>❓ Frequently Asked Questions</h3>
+                
+                <div class="kb-card">
+                    <h4>Q: How often should I test my soil?</h4>
+                    <p><strong>A:</strong> At least once per growing season, ideally before planting. For intensive farming, test 2-3 times per year.</p>
+                </div>
+
+                <div class="kb-card">
+                    <h4>Q: Can I grow crops not recommended by the system?</h4>
+                    <p><strong>A:</strong> Yes, but you'll need to make significant soil amendments. The system recommends crops that will perform best with your current soil conditions.</p>
+                </div>
+
+                <div class="kb-card">
+                    <h4>Q: How accurate are the fertilizer recommendations?</h4>
+                    <p><strong>A:</strong> Our recommendations are based on standard agricultural guidelines. Always consult with local agricultural experts for final decisions.</p>
+                </div>
+
+                <div class="kb-card">
+                    <h4>Q: What if my pH is too low or too high?</h4>
+                    <p><strong>A:</strong> For low pH (acidic), add lime. For high pH (alkaline), add sulfur or organic matter. Consult an agricultural expert for specific amounts.</p>
+                </div>
+            </div>
+
+            <div class="action-buttons" style="margin-top: 30px;">
+                <button class="btn btn-primary" onclick="location.href='soil-test.html'">Submit New Soil Test</button>
+                <button class="btn btn-secondary" onclick="location.href='dashboard.html'">Back to Dashboard</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('farmerData');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Soil Analysis System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🌾 Soil Analysis System</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </header>
+
+        <main class="form-container">
+            <div class="form-card">
+                <h2>Farmer Registration</h2>
+                <p class="form-subtitle">Create your account to get started</p>
+
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" required minlength="6">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+
+                    <div id="message" class="message"></div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+
+                <p class="form-footer">
+                    Already have an account? <a href="login.html">Login here</a>
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

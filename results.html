@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations - Soil Analysis System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🌾 Soil Analysis System</h1>
+            </div>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="reports.html">Reports</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </header>
+
+        <main class="results-content">
+            <h2>Your Soil Analysis Results</h2>
+
+            <div class="soil-summary">
+                <h3>Soil Test Summary</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="label">pH Level:</span>
+                        <span class="value" id="soilPH">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Nitrogen (N):</span>
+                        <span class="value" id="soilN">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Phosphorus (P):</span>
+                        <span class="value" id="soilP">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Potassium (K):</span>
+                        <span class="value" id="soilK">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations-section">
+                <h3>🌱 Recommended Crops</h3>
+                <p class="section-subtitle">Top 5 crops suitable for your soil conditions</p>
+                <div id="cropRecommendations" class="crop-list">
+                    <div class="loading">Loading recommendations...</div>
+                </div>
+            </div>
+
+            <div class="fertilizer-section">
+                <h3>💊 Fertilizer Recommendations</h3>
+                <p class="section-subtitle">Nutrient corrections for optimal crop growth</p>
+                <div id="fertilizerRecommendations" class="fertilizer-list">
+                    <div class="loading">Loading fertilizer suggestions...</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="window.print()">Print Report</button>
+                <button class="btn btn-secondary" onclick="location.href='soil-test.html'">New Test</button>
+                <button class="btn btn-secondary" onclick="location.href='dashboard.html'">Back to Dashboard</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/results.js"></script>
+</body>
+</html>

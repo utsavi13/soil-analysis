@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Soil Analysis System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+        }
+        .admin-tab {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .admin-tab.active {
+            background: #667eea;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .data-table th, .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .data-table th {
+            background: #667eea;
+            color: white;
+        }
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        .action-btns {
+            display: flex;
+            gap: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🔐 Admin Dashboard</h1>
+            </div>
+            <nav>
+                <span id="adminName" style="color: #667eea; font-weight: bold;"></span>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </header>
+
+        <main style="padding: 20px;">
+            <h2>Manage System Data</h2>
+
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="showTab('crops')">Manage Crops</button>
+                <button class="admin-tab" onclick="showTab('fertilizers')">Manage Fertilizers</button>
+                <button class="admin-tab" onclick="showTab('stats')">Statistics</button>
+            </div>
+
+            <!-- Crops Tab -->
+            <div id="crops-tab" class="tab-content active">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>🌱 Crops Management</h3>
+                    <button class="btn btn-primary" onclick="openAddCropModal()">+ Add New Crop</button>
+                </div>
+                <table class="data-table" id="cropsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Crop Name</th>
+                            <th>pH Range</th>
+                            <th>N (kg/ha)</th>
+                            <th>P (kg/ha)</th>
+                            <th>K (kg/ha)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cropsTableBody">
+                        <tr><td colspan="7">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Fertilizers Tab -->
+            <div id="fertilizers-tab" class="tab-content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>💊 Fertilizers Management</h3>
+                    <button class="btn btn-primary" onclick="openAddFertilizerModal()">+ Add New Fertilizer</button>
+                </div>
+                <table class="data-table" id="fertilizersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fertilizer Name</th>
+                            <th>N Content (%)</th>
+                            <th>P Content (%)</th>
+                            <th>K Content (%)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fertilizersTableBody">
+                        <tr><td colspan="6">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Statistics Tab -->
+            <div id="stats-tab" class="tab-content">
+                <h3>📊 System Statistics</h3>
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <span class="card-icon">👥</span>
+                        <h3 id="totalFarmers">0</h3>
+                        <p>Total Farmers</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="card-icon">🧪</span>
+                        <h3 id="totalTests">0</h3>
+                        <p>Soil Tests</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="card-icon">🌱</span>
+                        <h3 id="totalCrops">0</h3>
+                        <p>Crops in Database</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="card-icon">💊</span>
+                        <h3 id="totalFertilizers">0</h3>
+                        <p>Fertilizers</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Crop Modal -->
+    <div id="cropModal" class="modal">
+        <div class="modal-content">
+            <h3 id="cropModalTitle">Add New Crop</h3>
+            <form id="cropForm">
+                <input type="hidden" id="cropId">
+                <div class="form-group">
+                    <label>Crop Name *</label>
+                    <input type="text" id="cropName" required>
+                </div>
+                <div class="form-group">
+                    <label>Min pH *</label>
+                    <input type="number" id="cropPHMin" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Max pH *</label>
+                    <input type="number" id="cropPHMax" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Nitrogen (kg/ha) *</label>
+                    <input type="number" id="cropN" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Phosphorus (kg/ha) *</label>
+                    <input type="number" id="cropP" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Potassium (kg/ha) *</label>
+                    <input type="number" id="cropK" step="0.1" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('cropModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Fertilizer Modal -->
+    <div id="fertilizerModal" class="modal">
+        <div class="modal-content">
+            <h3 id="fertilizerModalTitle">Add New Fertilizer</h3>
+            <form id="fertilizerForm">
+                <input type="hidden" id="fertilizerId">
+                <div class="form-group">
+                    <label>Fertilizer Name *</label>
+                    <input type="text" id="fertilizerName" required>
+                </div>
+                <div class="form-group">
+                    <label>Nitrogen Content (%) *</label>
+                    <input type="number" id="fertilizerN" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Phosphorus Content (%) *</label>
+                    <input type="number" id="fertilizerP" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Potassium Content (%) *</label>
+                    <input type="number" id="fertilizerK" step="0.1" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('fertilizerModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>
